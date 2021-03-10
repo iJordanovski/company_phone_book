@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/contactsFragmentDestination">
+
+    <fragment
+        android:id="@+id/contactsFragmentDestination"
+        android:name="com.creativehub.phonebook.ui.ContactsFragment"
+        android:label="Contacts"
+        tools:layout="@layout/fragment_contacts" >
+        <action
+            android:id="@+id/actionAddContactFragment"
+            app:destination="@id/addContactFragmentDestination" />
+        <action
+            android:id="@+id/actionContactDetailsFragment"
+            app:destination="@id/contactDetailsFragmentDestination" />
+    </fragment>
+    <fragment
+        android:id="@+id/addContactFragmentDestination"
+        android:name="com.creativehub.phonebook.ui.AddContactFragment"
+        android:label="Add contact"
+        tools:layout="@layout/fragment_add_contacts" />
+    <fragment
+        android:id="@+id/contactDetailsFragmentDestination"
+        android:name="com.creativehub.phonebook.ui.ContactDetailsFragment"
+        android:label="Contact details"
+        tools:layout="@layout/fragment_contact_details" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
